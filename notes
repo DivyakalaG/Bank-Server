@@ -1,0 +1,97 @@
+Server Creation --> (Node js + Express)
+
+
+Basic Commands
+------------------------
+
+
+1) Creating package.jason     ----> npm init
+2) Creating node module and express ---> npm i express (to install express)
+3) Install nodemon -------> npm install -g nodemon
+4) Run -> nodemon index.js
+
+
+Basic Steps
+------------------------
+
+
+1) Creating a Folder (Bank server)
+2) Creating package.jason files
+3) Install Express
+4) Creating index page
+5) Import express inside the index.js files
+6) Create an app using express
+7) Setup the port number
+8) Resolving http request 
+9) HTTP Response code
+
+
+HTTP Response Code 
+      1xx - Information
+      2xx - Successful
+      3xx - Redirection
+      4xx - Client Error
+      5xx - Server Error
+      422 - Unprocessable Entity
+
+
+Token generation
+---------------------------------
+
+
+  login----> client----> server
+
+The server generates TOKEN wen a user completes registration n logs in. Through client we give the request like deposit,withdraw,etc this
+token will be passed. Atlast if the server generated token is recieved back through client then it is considered successfull else not.
+tats y we use tokens.
+so after reg  -> then login and generate token ie after reg token wont generate oly when we loggin token generates.
+
+
+10) JWT Token
+
+Install JWT Token - npm i jsonwebtoken
+To generate Token - sign()
+
+
+11) Middleware -> It comes in the middle of the request and response cycle of the node js execution. It makes immediate change to the request  
+                  response. Used to validate the token.
+
+      - request
+      - response
+      - next
+
+    i) Application specific middleware -> for entire application
+    ii) Router specific middleware -> for any specific path eg. register or login or etc like that. For token verification we use verify() 
+                                      method
+
+
+12) Database Intergration
+      i) Install Mongoose -> npm i mongoose
+
+
+13) Asynchronous function resolving -> promise is used
+
+    i) Resolve state - .then()
+    ii) Reject state - catch()
+
+14) CORS - Cross Origin Resource Sharing
+        To install -> npm i cors
+
+        This is used to connect two port (4200 and 3000) and pass data. till now we used thunder client so now by opening frontend we connect it with mongo db using this cors
+
+        port: 4200 (angular) -----request------3000 (node)(receive request)
+
+then open front end and in app.modules import httpp client
+
+now in front end data service .ts register part remove previous code coz its no more need.now from here wat all we do is real coding procedure
+
+15) Asynchronous call -> RxJs (Reactive Extension code for JavaScript)
+
+    In js if an asyn call come - we use promise(.then n catch)
+    but in angular typescript - we use RxJs(library)
+
+       i) Observable - can resolve more req when compared to promise
+              a) resolved - subscribe()
+              b) reject - catch
+      
+      now in frontend reg.ts file change that const result=this.ds.register....
